@@ -2,8 +2,8 @@
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to DIRT 🤠</h1>
+        <div className="flex flex-col m-2">
+            <h1 className="text-2xl font-semibold">Welcome to DIRT 🤠</h1>
             <p>The D.I.R.T Stack consists of 4 major pieces</p>
             <ul>
                 <li><strong>D</strong>jango</li>

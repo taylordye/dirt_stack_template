@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Apps
+    'accounts',
+
     # DIRT stack
     'django_vite',
     'inertia',
+    'js_routes',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +142,7 @@ CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 
 # Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'react-app' / 'dist'
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'react_app' / 'dist'
 
 # If we should use HMR or not.
 DJANGO_VITE_DEV_MODE = DEBUG
@@ -150,8 +154,11 @@ DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_PORT = 3000
 
 # Name of our static files' folder (after called python manage.py collectstatic)
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
 # when run command python manage.py collectstatic
-STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+STATICFILES_DIRS = [ DJANGO_VITE_ASSETS_PATH, BASE_DIR / 'static', ]
+
+# User model accounts
+AUTH_USER_MODEL = "accounts.CustomUser" 
